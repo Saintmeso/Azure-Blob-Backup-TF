@@ -1,3 +1,4 @@
+#the variables.tf declares the inputs that the module accepts and the correct data types.
 variable "name" {
     description = "Name of the Azure Resource Group"
     type = string
