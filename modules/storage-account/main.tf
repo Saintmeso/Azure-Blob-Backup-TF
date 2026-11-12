@@ -7,4 +7,8 @@ resource "azurerm_storage_account" "this" {
 
   tags = var.tags
    
+  allow_nested_items_to_be_public = false
+  https_traffic_only_enabled = true
+  min_tls_version = "TLS1_2"
+  local_user_enabled = false
 }
