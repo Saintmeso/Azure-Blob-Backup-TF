@@ -11,4 +11,19 @@ resource "azurerm_storage_account" "this" {
   https_traffic_only_enabled = true
   min_tls_version = "TLS1_2"
   local_user_enabled = false
+
+  blob_properties { 
+    versioning_enabled = true
+    
+    delete_retention_policy { #how long files stay until they are deleted
+        days = 30
+    }
+
+    container_delete_retention_policy { #how long containers stay until they are deleted
+        days = 30
+        }
+    
+    change_feed_enabled = true
+  }
 }
+
