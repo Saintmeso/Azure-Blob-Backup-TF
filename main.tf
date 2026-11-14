@@ -25,3 +25,16 @@ module "storage_account" {
   }
 
 }
+
+module "containers" {
+  source = "./modules/containers"
+#the container names we want
+  container_names = [
+    "business-documents",
+    "application-files",
+    "database-backups"
+   ]
+#ID is given by azure after creation
+   storage_account_id = module.storage_account.id
+
+}
