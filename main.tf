@@ -39,18 +39,3 @@ module "containers" {
 
 }
 
-module "logic_app" {
-  source = "./modules/logic-app"
-
-  name                = "logicapp-northwind-backup-dev"
-  resource_group_name = module.resource_groups.resource_group_name
-  location            = module.resource_groups.resource_group_location
-
-  storage_account_id = module.storage_account.id
-
-  tags = {
-    Environment = "Development"
-    Project     = "Backup-DR"
-    ManagedBy   = "Terraform"
-  }
-}
