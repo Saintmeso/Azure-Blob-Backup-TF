@@ -12,6 +12,7 @@ resource "azurerm_storage_account" "this" {
   min_tls_version                 = "TLS1_2"
   local_user_enabled              = false
 
+
   blob_properties {
     versioning_enabled  = true
     change_feed_enabled = true
